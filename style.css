@@ -1,0 +1,38 @@
+.main{
+    width: 40%;
+    height: 50%;
+    background: rebeccapurple;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+#heading{
+    position: absolute;
+    background: #349BC4;
+    width: 100%;
+    text-align: center;
+    height: 20%;
+    font-size: 40px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+}
+#showclock{
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    bottom: 0%;
+    background: black;
+    text-align: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 100px;
+}
+#AMPM{
+    margin-left: 30px;
+}

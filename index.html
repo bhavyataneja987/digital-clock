@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+<title>Digital Clock</title>
+</head>
+<body>
+    <div class="main">
+        <div id="heading">YOUR LOCAL TIME</div>
+        <div id="showclock">
+            <div id="hours">0</div>
+            <div id="space">:</div>
+            <div id="minutes">0</div>
+            <div id="space">:</div>
+            <div id="seconds"></div>
+            <div id="AMPM">AM</div>
+        </div>
+    </div>
+
+    <script>
+     var displayclock = document.getElementById('showclock');
+     var secondsvalue = document.getElementById('seconds');
+     var minutesvalue = document.getElementById('minutes');
+     var hoursvalue = document.getElementById('hours');
+     var AMPMvalue = document.getElementById('AMPM');
+    // var seconds = document.createElement('span');
+    // seconds.setAttribute('id','sec');
+    // var secondscount = document.getElementById('sec');
+    // displayclock.appendChild(secondscount);
+    
+    var seconds = 0;
+    var minutes = 0;
+    var hours = 0;
+
+    //(hoursvalue,minutesvalue).style.display = "none";
+   // AMPMvalue.innerText ="PM"
+
+    var count = setInterval(function(){
+        seconds++;
+        if(seconds > 60 ){
+            seconds = 0;
+        }
+        else if(seconds == 60){
+            minutes++;
+            minutesvalue.style.display = "block";
+
+            if(minutes > 60){
+                minutes = 0;
+            }
+            else if(minutes == 60){
+                hours++;
+                hoursvalue.style.display = "block";
+
+                if(hours > 24 ){
+                    hours = 0;
+                }
+                else if(hours >= 12){
+                    AMPMvalue.innerText = "PM";
+                }
+            }
+        }       
+
+        secondsvalue.innerText = seconds;
+        minutesvalue.innerText = minutes;
+        hoursvalue.innerText = hours;
+    },1000);
+
+    </script>
+</body>
+</html>
